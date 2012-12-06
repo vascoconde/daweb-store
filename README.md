@@ -1,4 +1,0 @@
-daweb-store
-===========
-
-DAWeb Store
