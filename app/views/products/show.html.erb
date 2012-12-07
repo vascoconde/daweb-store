@@ -16,15 +16,22 @@
 </p>
 
 <p>
-  <b>Manufacturer:</b>
+  <b>Manufacturer</b>
   <%= @product.manufacturer.name %>
 </p>
 
 <p>
-  <b>Category:</b>
+  <b>Category</b>
   <%= @product.category.name %>
 </p>
 
+<p>
+  <b>Photos</b>
+  <% @photos.each do |phot| %>
+	<%= image_tag(phot.url) %>
+  <% end %>
+  
+</p>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
