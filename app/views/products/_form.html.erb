@@ -33,6 +33,16 @@
       <%= f.label :manufacturer %><br />
       <%= f.select :manufacturer_id, @manufacturers.map {|m| [m.name,m.id] } %>
     </div>
+    
+      <div class="field">
+      <%= f.fields_for :photos do |builder| %>
+      <p>
+      	<%= builder.label :url, "Photo URL" %><br />
+      	<%= builder.text_field :url %>
+      </p>
+	  <% end %>	
+    </div>
+
 
   <div class="actions">
     <%= f.submit %>

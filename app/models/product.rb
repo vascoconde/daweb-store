@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :manufacturer_id, :category_id
+  attr_accessible :description, :name, :price, :manufacturer_id, :category_id, :manufacturer, :category, :photos_attributes
   has_many :reviews
   has_many :photos
   has_many :related_products, :class_name => "Product"
@@ -9,4 +9,6 @@ class Product < ActiveRecord::Base
 
   validates :description, :name, :price, :manufacturer_id, :category_id,
               :presence => true
+              
+  accepts_nested_attributes_for :photos
 end
