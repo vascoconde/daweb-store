@@ -1,14 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Store</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+        <title>FooBar Online Store - Página Inicial</title>
+
+ 	 	<%= stylesheet_link_tag    "application", :media => "all" %>
+  		<%= javascript_include_tag "application" %>
+ 		 <%= csrf_meta_tags %>
+	</head>
+	
 <body>
 
-<%= yield %>
+    <div id="header">
+        <a id="logo" href="#"><%= image_tag "logo-blue.png" %> </a>
+        <div id="title">FooBar Online Store</div>
+               
+        <form id="search form" action="search.html">
+        	<div>
+        		<select id="theme drop" name="theme">
+	                <option value="1">Tema 1</option>
+	                <option value="2">Tema 2</option>
+        		</select>
+	            <input id="searchBox" type="text" name="search query" value="" />
+	            <input id="lastViewedProductId" type="hidden" name="lastproductid" />
+	            <input type="submit" value="Search" />
+           </div>
+        </form>
+        
+        <div id="userInfo">
+            Utilizador: An&#243;nimo <a href="#"><img src="images/shoppingbasket.png" alt="Shopping basket" /></a>
+        </div> 
+        
+    </div>
+	<div id="container">
+		<%= yield %>
+    </div>
 
 </body>
 </html>
