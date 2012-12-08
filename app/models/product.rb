@@ -1,9 +1,11 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :name, :price, :manufacturer_id
-  attr_accessible :category_id, :manufacturer, :category, :photos_attributes
   has_many :reviews
   has_many :photos
   has_many :related_products, :class_name => "Product"
+
+  attr_accessible :description, :name, :price, :manufacturer_id, 
+    :category_id, :manufacturer, :category, :photos
+
 
   belongs_to :category
   belongs_to :manufacturer
