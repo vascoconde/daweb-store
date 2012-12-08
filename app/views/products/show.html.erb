@@ -1,3 +1,5 @@
+<div class="product">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -25,14 +27,25 @@
   <%= @product.category.name %>
 </p>
 
-<p>
-  <b>Photos</b>
-  <% @photos.each do |phot| %>
-	<%= image_tag(phot.url) %>
-  <% end %>
-  
-</p>
+<h3>Photos</h3>
+<% @photos.each do |photo| %>
+  	<div class="featuredProductImage">
+		<%= image_tag(photo.url, class: "featuredProductImage") %>
+		<%= photo.description %>
+	</div>
+<% end %>
+
+<h3>Related Products</h3>
+<div class="similarProducts">
+	<% @related_products.each do |product| %>
+		<%= image_tag(product.photos.first.url, class: "featuredProductImage") %>
+		<%= product.photos.first.description %>
+	<% end %>	
+</div>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<div class="clear">
+
+</div>
