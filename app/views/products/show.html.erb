@@ -1,11 +1,25 @@
+<div id="sidebar">
+
+	<p id="productName">  <%= @product.name %> </p>
+	
+	<%= image_tag( @photos.first.url, class: "productImage")%>
+	
+	<div id="manufacturer"> 
+		<h3>Manufacturer</h3>
+		<%= @product.manufacturer.name %>
+	</div>
+	
+	<div id="manufacturerProducts"> 
+		<h4>Other Products from this manufacturer</h4>
+		<% @related_products.each do |product| %>
+			<%= image_tag(product.photos.first.url, class: "manufacturerProductImage") %>
+		<% end %>
+	</div>
+ </div>
+
 <div class="product">
 
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
 
 <p>
   <b>Description:</b>
@@ -19,7 +33,6 @@
 
 <p>
   <b>Manufacturer</b>
-  <%= @product.manufacturer.name %>
 </p>
 
 <p>

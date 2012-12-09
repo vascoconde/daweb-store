@@ -2,3 +2,80 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*  product.html  */
+
+#sidebar {
+	height: 100%;
+	position: relative;
+	float: left;
+	width: 230px;
+
+}
+
+.product {
+	position: relative;
+	width:700px;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color: #f0f7ff;
+}
+
+#breadcrumb {
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	width: 1000px;
+	margin: auto;
+}
+
+#productName {
+	text-align: center;
+}
+
+#productPhoto {
+	margin: 15px 1px 5px 10px;
+}
+
+
+
+#photosProduct {
+
+}
+
+#descriptionProduct {
+	margin: 0 0 20px 0;
+}
+
+.manufacturerProductimage {
+	float: left;
+	margin-top: 15px;
+	margin-right: 15px;
+}
+
+#photosProduct {
+	width: 630px;
+	margin-left: 57px;
+}
+
+
+.productImage {
+	max-height: 50%;
+	max-width: 50%;
+	display: block;
+	margin: auto;
+}
+
+
+
+#searchBox {
+	width: 170px;
+}
+
+.manufacturerProductImage {
+	height: 80px;
+	width: 80px;
+}
+
