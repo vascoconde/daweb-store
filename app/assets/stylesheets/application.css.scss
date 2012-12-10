@@ -143,14 +143,12 @@ li.categoryItem a:hover {
 	color: #949494;
 }
 
-#productCategories {
-	margin-bottom: 111px;
-}
+
 
 #featuredProduct {
 	float: left;
 	background-color: #D4EFFA;
-	width: 790px;
+	width: 750px;
 }
 
 #lastView {
@@ -287,4 +285,8 @@ td.productListDescription {
 .featuredProductImage {
 	width: 190px;
 	height: 190px;
+}
+
+#productCategories ul {
+	padding-left: 10px;
 }

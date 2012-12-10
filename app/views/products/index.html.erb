@@ -1,3 +1,15 @@
+<div id="sidebar">
+	<div id="productCategories">
+		<h3>Product Categories<h3>
+		<ul>
+	   	<% @categories.each do |c| %>
+	   		<li class="categoryItem"><%= link_to(c.name,category_path( c )) %></li>
+		<% end %>
+		</ul>
+	</div>
+</div>
+
+<div id="featuredProduct">
 <h1>Listing products</h1>
 
 <table>
@@ -27,3 +39,6 @@
 <br />
 
 <%= link_to 'New Product', new_product_path %>
+</div>
+
+<div class="clear"></div>

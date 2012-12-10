@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+  	@categories = Category.all
     @products = Product.all
     respond_to do |format|
       format.html # index.html.erb
