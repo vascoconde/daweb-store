@@ -1,16 +1,9 @@
 <div id="sidebar">
-	<div id="productCategories">
-		<h3>Product Categories<h3>
-		<ul>
-	   	<% @categories.each do |c| %>
-	   		<li class="categoryItem"><%= link_to(c.name,category_path( c )) %></li>
-		<% end %>
-		</ul>
-	</div>
+	<%= render 'layouts/categories_sidebar' %>
 </div>
 
 <div id="featuredProduct">
-<h1>Listing products</h1>
+<h1>Featured Products</h1>
 
 <table>
   <tr>

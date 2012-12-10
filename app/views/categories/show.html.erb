@@ -1,10 +1,21 @@
+<div id="sidebar">
+	<%= render 'layouts/categories_sidebar' %>
+</div>
+<div class="product">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<h2><%= @category.name %></h2>
+<% @products.each do |product| %>
+	<div>
+		<h3><%= product.name %></h3>
+		<div class="image">
+			<%= image_tag product.photos.first.url %>
+		</div>
+		<p><%= product.description %></p>
+	</div>
+<% end %>
 
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+</div>
