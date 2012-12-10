@@ -106,13 +106,6 @@ a#logo {
 	background-color: #EBF2F5;
 }
 
-#container {
-	clear: both;
-	border: 1px solid black;
-	margin: auto;
-	width: 1000px;
-	background-color: #85CEED;
-}
 
 
 #sidebar #lastView img {
@@ -164,9 +157,7 @@ li.categoryItem a:hover {
 	text-align: right;
 }
 
-.product {
-	min-height: 350px;
-}
+
 
 .productphoto {
 	float: left;
@@ -272,6 +263,8 @@ td.productListDescription {
 	height: 80px;
 }
 
+
+/*New*/
 .productImage {
 	min-width: 190px;
 	height: 190px;
@@ -290,3 +283,20 @@ td.productListDescription {
 #productCategories ul {
 	padding-left: 10px;
 }
+
+#main {
+	position: relative;
+	width:700px;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	background-color: #f0f7ff;
+}
+
+
+#container {
+	clear: both;
+	margin: auto;
+	width: 1000px;
+}
+
