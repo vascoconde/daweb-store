@@ -73,13 +73,6 @@ body {
 	font-size: xx-large;
 }
 
-#userInfo {
-	text-align: right;
-	clear: right;
-	width: 200px;
-	margin: 25px 10px 10px;
-	float: right;
-}
 
 a#logo {
 	background-image: url('../images/logo-blue.png');
@@ -298,5 +291,18 @@ td.productListDescription {
 	clear: both;
 	margin: auto;
 	width: 1000px;
+}
+
+#searchForm {
+	position: absolute;
+	right: 10px;
+}
+
+#userInfo {
+	position: absolute;
+	width: 300px;
+	right: 10px;
+	bottom: 10px;
+	text-align: right;
 }
 

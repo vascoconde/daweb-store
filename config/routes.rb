@@ -1,27 +1,13 @@
 Store::Application.routes.draw do
   resources :cart_items
-
-
   resources :carts
-
-
   resources :users
-
-
   resources :photos
-
-
   resources :reviews
-
-
   resources :manufacturers
-
-
   resources :categories
-
-
   resources :products
-
+  match 'search' => 'search#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
