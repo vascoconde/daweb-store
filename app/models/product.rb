@@ -4,7 +4,8 @@ class Product < ActiveRecord::Base
   has_many :related_products, :class_name => "Product"
 
   attr_accessible :description, :name, :price, :manufacturer_id, 
-    :category_id, :manufacturer, :category, :photos
+	:category_id, :manufacturer, :category, :photos
+    
 
 
   belongs_to :category
