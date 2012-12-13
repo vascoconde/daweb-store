@@ -25,9 +25,12 @@
  
          
         <div id="userInfo">
-        	<%= link_to "Sign Up", new_user_path %> ou <%= link_to "Sign In", new_session_path %> </br>
-
-            Utilizador: An&#243;nimo <br/>
+        	<% if current_user %>
+        		Utilizador: <%= current_user.username %> <br/>
+        		<%= link_to "O meu carrinho de Compras", current_user.cart %>
+        	<% else %>
+				<%= link_to "Sign Up", new_user_path %> ou <%= link_to "Sign In", new_session_path %> 
+			<% end %> </br>
             <a href="#"> My shopping cart</a>
         </div> 
         

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :username
+	has_one :cart
+  	has_many :reviews
 
-  has_many :reviews
+  attr_accessible :email, :password, :username, :cart
 end
