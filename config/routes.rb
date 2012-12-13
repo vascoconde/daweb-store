@@ -1,4 +1,5 @@
 Store::Application.routes.draw do
+
   resources :cart_items
   resources :carts
   resources :users
@@ -8,6 +9,7 @@ Store::Application.routes.draw do
   resources :categories
   resources :products
   match 'search' => 'search#index'
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
