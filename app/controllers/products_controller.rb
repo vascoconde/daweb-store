@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos
     @related_products = [Product.last]
+    @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
