@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
   	@categories = Category.all
-    @products = Product.all
+    @products = Product.limit(10)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
     @related_products = @product.related_products
     @reviews = @product.reviews.order("created_at DESC")
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
+    @cart = User.find(session[:user_id]).cart
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

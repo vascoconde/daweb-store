@@ -57,7 +57,8 @@ class CartsController < ApplicationController
   # PUT /carts/1.json
   def update
     @cart = Cart.find(params[:id])
-
+    product = Product.find(params[:cart][:product_id])
+    @cart.products.push product
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
         format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }

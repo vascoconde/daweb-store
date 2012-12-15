@@ -21,6 +21,9 @@
 
 <p id="notice"><%= notice %></p>
 
+<p id="addToCart">
+	<%= button_to "Add to cart", cart_items_path(:product_id => @product) %>
+</p>
 <p>
   <b>Description:</b>
   <%= @product.description %>
