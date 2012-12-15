@@ -47,7 +47,7 @@
 <h3>Related Products</h3>
 <div class="similarProducts">
 	<% @related_products.each do |product| %>
-		<%= image_tag(product.photos.first.url, class: "featuredProductImage") %>
+		<%= link_to(image_tag(product.photos.first.url, class: "featuredProductImage"), product) %>
 		<%= product.photos.first.description %>
 	<% end %>	
 </div>

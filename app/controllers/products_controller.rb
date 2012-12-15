@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = @product.photos
-    @related_products = [Product.last]
+    @related_products = @product.related_products
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
     respond_to do |format|
       format.html # show.html.erb
