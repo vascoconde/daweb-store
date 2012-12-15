@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos
     @related_products = @product.related_products
+    @reviews = @product.reviews.order("created_at DESC")
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
     respond_to do |format|
       format.html # show.html.erb
@@ -42,7 +43,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     @categories = Category.all
-        @manufacturers = Manufacturer.all
+    @manufacturers = Manufacturer.all
   end
 
   # POST /products

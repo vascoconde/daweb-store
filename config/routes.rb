@@ -7,7 +7,9 @@ Store::Application.routes.draw do
   resources :reviews
   resources :manufacturers
   resources :categories
-  resources :products
+  resources :products do
+    resources :reviews
+  end
   match 'search' => 'search#index'
   resources :sessions
 

@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
 	:category_id, :manufacturer, :category, :photos_attributes
     
 
-  accepts_nested_attributes_for :photos, allow_destroy: true 
+  accepts_nested_attributes_for :photos, :reviews, allow_destroy: true 
 
   belongs_to :category
   belongs_to :manufacturer

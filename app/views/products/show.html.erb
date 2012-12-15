@@ -52,6 +52,23 @@
 	<% end %>	
 </div>
 
+<h3>Reviews</h3>
+<div class="reviews">
+	<% @reviews.each do |review| %>
+		Review: <%= review.content %><br />
+		Date: <%= review.created_at %><br />
+		User: <%= review.user.username %><br />
+	<% end %>	
+	<% if session[:user_id] != nil %>
+        <%= form_for [@product, Review.new] do |f| %>     
+        	<p>
+	        		<%=	f.text_area :content %>
+	        		<%= f.submit "Post" %>   	
+        	</p>
+       <% end %> 
+   <% end %>  
+ 
+</div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
