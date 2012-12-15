@@ -36,7 +36,7 @@ class CartsController < ApplicationController
   def edit
     @cart = Cart.find(params[:id])
   end
-
+  
   # POST /carts
   # POST /carts.json
   def create
@@ -73,11 +73,19 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart = Cart.find(params[:id])
-    @cart.destroy
-
+    @cart = current_cart
+    if (@cart == nil)
+      @cart = Cart.find(params[:id])
+    end
+    if (@cart.cart_items.any?)
+      @cart.cart_items.each do |cart_item|
+        cart_item.destroy
+      end
+    else
+     @cart.destroy
+    end
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to(root_url, :notice => "Cart successfully emptied") }
       format.json { head :no_content }
     end
   end

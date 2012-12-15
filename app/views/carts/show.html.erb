@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <% @cart.cart_items.each do |cart_item| %>
-<%= link_to(cart_item.product.name, product_path(cart_item.product)) %><br/>
+<%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
 <% end %>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<% if (@cart.cart_items.any?) %>
+<%=	button_to "Empty cart", @cart, :method => :delete, :confirm => "Are you sure?" %>
+<% else %>
+<p>There's no items in cart</p>
+<% end %>

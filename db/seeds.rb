@@ -2,6 +2,8 @@ Manufacturer.destroy_all
 Category.destroy_all
 Product.destroy_all
 Photo.destroy_all
+CartItem.destroy_all
+Cart.destroy_all
 
 Manufacturer.create([{ name: 'Apple' }, { name: 'Microsoft' },{ name: "O'Reilly" },{ name: 'Google' }, {name: 'IKEA' }])# Categorias 
 Category.create(:name => %{Books})

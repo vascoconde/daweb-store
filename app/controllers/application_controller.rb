@@ -9,6 +9,10 @@ private
   end
   helper_method :current_user
   
+  def current_cart
+    current_user.cart
+  end
+  
   def authorize
   	redirect_to new_session_path, alert: "Nao autorizado" if current_user.nil?
   end
