@@ -64,6 +64,7 @@
 		Date: <%= review.created_at %><br />
 		User: <%= review.user.username %><br />
 	<% end %>	
+	<%= will_paginate @reviews %>
 	<% if current_user != nil %>
         <%= form_for [@product, Review.new] do |f| %>     
         	<p>
@@ -72,7 +73,6 @@
         	</p>
        <% end %> 
    <% end %>  
- 
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

@@ -8,6 +8,8 @@ class Order < ActiveRecord::Base
 
   validates :address, :email, :name, :pay_type, :presence => true
   validates :pay_type, :inclusion => PAYMENT_TYPES
+  
+  default_scope order("created_at DESC")
 
   def add_cart_items_from_cart(cart)
     cart.cart_items.each do |item|

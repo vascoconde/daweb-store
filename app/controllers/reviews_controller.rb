@@ -48,7 +48,7 @@ class ReviewsController < ApplicationController
         format.html { redirect_to @product, notice: 'Review was added to product.' }
         format.json { render json: @product, status: :created, location: @review }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @product }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
     end

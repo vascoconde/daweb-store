@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
   	@categories = Category.all
-    @products = Product.limit(10)
+    @products = Product.paginate(:page => params[:page], :per_page => 20)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @photos = @product.photos
     @related_products = @product.related_products
-    @reviews = @product.reviews.order("created_at DESC")
+    @reviews = @product.reviews.paginate(:page => params[:page], :per_page => 10)
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
     if (current_user != nil)
       @cart = User.find(session[:user_id]).cart
