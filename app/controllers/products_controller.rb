@@ -20,7 +20,9 @@ class ProductsController < ApplicationController
     @related_products = @product.related_products
     @reviews = @product.reviews.order("created_at DESC")
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
-    @cart = User.find(session[:user_id]).cart
+    if (current_user != nil)
+      @cart = User.find(session[:user_id]).cart
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -52,6 +54,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
     @manufacturers = Manufacturer.all
+    @categories = Category.all
     respond_to do |format|
       if @product.save
         
