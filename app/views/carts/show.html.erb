@@ -6,7 +6,7 @@
   <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
 <% end %>
 
-Total : <% @cart.total_cart_items_price %> (não esta a funcionar, não sei porquê)
+Total : <%= @cart.total_cart_items_price %>
 
 
 <% if (@cart.cart_items.any?) %>
@@ -18,8 +18,3 @@ Total : <% @cart.total_cart_items_price %> (não esta a funcionar, não sei porq
 <% else %>
     <p>There's no items in cart</p>
 <% end %>
-
-
-<h2>Encomendas feitas</h2>
-
-(falta listar aqui as orders)
