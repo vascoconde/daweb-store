@@ -1,3 +1,4 @@
+# encoding: Cp1252
 <div id="sidebar">
 	<%= render 'layouts/categories_sidebar' %>
 </div>
@@ -21,7 +22,7 @@
   	<td><%= image_tag(product.photos.first.url) %></td>
     <td><%= product.name %></td>
     <td><%= product.description %></td>
-    <td><%= product.price %></td>
+    <td><%= number_to_currency(product.price, :unit => "€") %></td>
     <td><%= product.manufacturer.name %></td>
     <td><%= product.category.name %></td>
     <td><%= link_to 'Show', product %></td>

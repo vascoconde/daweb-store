@@ -3,10 +3,11 @@
 	<p id="productName">  <%= @product.name %> </p>
 	
 	<%= image_tag( @photos.first.url, class: "productImage")%>
-
-    <p id="addToCart">
-        <%= button_to "Add to cart", cart_items_path(:product_id => @product) %>
-    </p>
+	<% if (current_user != nil) %>
+	    <p id="addToCart">
+	        <%= button_to "Add to cart", cart_items_path(:product_id => @product) %>
+	    </p>
+    <% end %>
 
 	<div id="manufacturer"> 
 		<h3>Manufacturer</h3>
@@ -32,7 +33,7 @@
 
 <p>
   <b>Price:</b>
-  <%= @product.price %>
+  <%= number_to_currency(@product.price, :unit => "€") %>
 </p>
 
 <p>
@@ -63,7 +64,7 @@
 		Date: <%= review.created_at %><br />
 		User: <%= review.user.username %><br />
 	<% end %>	
-	<% if session[:user_id] != nil %>
+	<% if current_user != nil %>
         <%= form_for [@product, Review.new] do |f| %>     
         	<p>
 	        		<%=	f.text_area :content %>

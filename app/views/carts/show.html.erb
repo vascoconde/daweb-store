@@ -6,7 +6,7 @@
   <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
 <% end %>
 
-Total : <%= @cart.total_cart_items_price %>
+Total : <%= number_to_currency(@cart.total_cart_items_price, :unit => "€") %>
 
 
 <% if (@cart.cart_items.any?) %>
