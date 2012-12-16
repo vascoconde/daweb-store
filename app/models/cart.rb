@@ -3,7 +3,6 @@ class Cart < ActiveRecord::Base
   belongs_to :user
 
   attr_accessible :cart_items
-#  attr_accessible :products, :user
 
   def total_cart_items_price
     total = 0

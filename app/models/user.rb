@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   has_many :orders
 
   attr_accessible :email, :password, :username, :cart, :orders
+  
+  validates :email, :password, :username, :presence => true
 end
