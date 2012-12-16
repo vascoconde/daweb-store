@@ -1,11 +1,25 @@
+<h2>Your Cart</h2>
+
 <p id="notice"><%= notice %></p>
 
 <% @cart.cart_items.each do |cart_item| %>
-<%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
+  <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
 <% end %>
 
+Total : <% @cart.total_cart_items_price %> (não esta a funcionar, não sei porquê)
+
+
 <% if (@cart.cart_items.any?) %>
-<%=	button_to "Empty cart", @cart, :method => :delete, :confirm => "Are you sure?" %>
+
+    <%=	button_to "Empty cart", @cart, :method => :delete, :confirm => "Are you sure?" %>
+
+    <%= button_to "Checkout" , new_order_url, :method=>:get %>
+
 <% else %>
-<p>There's no items in cart</p>
+    <p>There's no items in cart</p>
 <% end %>
+
+
+<h2>Encomendas feitas</h2>
+
+(falta listar aqui as orders)
