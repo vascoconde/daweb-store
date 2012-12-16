@@ -46,7 +46,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_cart_items_from_cart(current_cart)
-
+    @user = current_user
+    @user.orders.push @order
     respond_to do |format|
       if @order.save
         Cart.new

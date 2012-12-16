@@ -16,6 +16,19 @@
 </p>
 
 
+<h2>Encomendas feitas</h2>
+<p>
+	<hr>
+	<% order_total_price = 0 %>
+	<% @user.orders.each do |order| %>
+		Order date: <%= order.created_at %><br />
+		<% order.cart_items.each do |item| %>
+			<% order_total_price += item.total_price %>
+			<%= link_to(item.product.name, product_path(item.product)) %> &times; <%= item.quantity %> = <%= item.total_price %><br />
+		<% end %>
+		<br />Order total: <%= order_total_price %><hr>
+	<% end %>
+</p>
 
 
 

@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ "Check" , "Credit card" , "Purchase order" ]
 
   has_many :cart_items, :dependent => :destroy
+  belongs_to :user
 
   attr_accessible :address, :email, :name, :pay_type
 
