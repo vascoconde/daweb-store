@@ -19,15 +19,12 @@
 
 <% @products.each do |product| %>
   <tr>
-  	<td><%= image_tag(product.photos.first.url) %></td>
+  	<td><%= link_to(image_tag(product.photos.first.url), product) %></td>
     <td><%= product.name %></td>
-    <td><%= product.description %></td>
+    <td><%= truncate(product.description, :length => 100, :separator => ' ') %></td>
     <td><%= number_to_currency(product.price, :unit => "€") %></td>
     <td><%= product.manufacturer.name %></td>
     <td><%= product.category.name %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
