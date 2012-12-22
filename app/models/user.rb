@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :username, :cart, :orders, :admin
   
   validates :email, :password, :username, :presence => true
-  
+  validates :email, :username, :uniqueness => true
+
 end
