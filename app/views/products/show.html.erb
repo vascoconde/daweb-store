@@ -74,7 +74,7 @@
 			<i><%= distance_of_time_in_words_to_now review.created_at %> ago </i>
 			<%= link_to('Apagar Review', review, method: :delete, data: { confirm: 'Tem a certeza que quer apagar esta Review?' }) if(current_user && current_user.admin?) %>
 <br />
-			User: <i><%= review.user.username %></i><br />
+			User: <i><%= review.user.username unless review.user.nil? %></i><br />
 
 			<p> <%= review.content %></p>
 		</div>
