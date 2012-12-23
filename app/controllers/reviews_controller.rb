@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  before_filter :authorize_admin, only: [:edit, :update, :destroy ]
+
   # GET /reviews
   # GET /reviews.json
   def index

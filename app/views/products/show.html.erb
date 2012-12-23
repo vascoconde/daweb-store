@@ -30,9 +30,10 @@
 
 <p id="notice"><%= notice %></p>
 
+<% if (current_user && current_user.admin?)%>
 <%= link_to 'Actualizar Produto', edit_product_path(@product) %> |
-<%= link_to 'Apagar Produto', @product, method: :delete, data: { confirm: 'Tem a certeza que quer apagar este produto?' } %> |
-<%= link_to 'Voltar', products_path %>
+<%= link_to 'Apagar Produto', @product, method: :delete, data: { confirm: 'Tem a certeza que quer apagar este produto?' } %>
+<% end %>
 
 	<h3>Description</h3> 
 	<%= @product.description %>
@@ -70,7 +71,9 @@
 	<% end %>
 	<% @reviews.each do |review| %>
 		<div class="review">
-			<i><%= distance_of_time_in_words_to_now review.created_at %> ago</i><br />
+			<i><%= distance_of_time_in_words_to_now review.created_at %> ago </i>
+			<%= link_to('Apagar Review', review, method: :delete, data: { confirm: 'Tem a certeza que quer apagar esta Review?' }) if(current_user && current_user.admin?) %>
+<br />
 			User: <i><%= review.user.username %></i><br />
 
 			<p> <%= review.content %></p>
