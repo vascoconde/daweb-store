@@ -12,7 +12,6 @@
 <%= link_to("Order by Name", root_path(order: "name")) %>
 </div>
 <%= render :partial => "layouts/product", :collection => @products %>
-
 <div class="pagination"><%= will_paginate @products %></div>
 <%= link_to 'New Product', new_product_path %>
 </div>
