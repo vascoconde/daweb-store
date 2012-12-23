@@ -306,3 +306,20 @@ td.productListDescription {
 	text-align: right;
 }
 
+.product {
+	position: relative;
+}
+
+.product .productImage {
+	position: relative;
+	float: left;
+	width: 270px;
+	height: 260px;
+}
+
+.product .productInfo {
+	position: relative;
+	float: left;
+	width: 390px;
+}
+

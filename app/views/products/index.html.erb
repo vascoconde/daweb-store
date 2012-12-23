@@ -6,28 +6,7 @@
 <div id="main">
 <h1>Featured Products</h1>
 
-<table>
-  <tr>
-  	<th>Photo</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Manufacturer</th>
-    <th>Category</th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-  	<td><%= link_to(image_tag(product.photos.first.url), product) %></td>
-    <td><%= product.name %></td>
-    <td><%= truncate(product.description, :length => 100, :separator => ' ') %></td>
-    <td><%= number_to_currency(product.price, :unit => "€") %></td>
-    <td><%= product.manufacturer.name %></td>
-    <td><%= product.category.name %></td>
-  </tr>
-<% end %>
-</table>
+<%= render :partial => "layouts/product", :collection => @products %>
 
 <br />
 <%= will_paginate @products %>
