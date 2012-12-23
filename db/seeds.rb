@@ -203,7 +203,7 @@ Product.create(:name => %{The Ruby Programming Language},
       Ruby programmers who want to challenge their understanding and increase their mastery of the
       language.}, 
 		   :price => 16.79, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Programming Ruby 1.9}, 
 		   :description => %{Ruby is a fully object-oriented language, much like the classic object-oriented
@@ -254,7 +254,7 @@ Product.create(:name => %{The Ruby Programming Language eBook},
       Ruby programmers who want to challenge their understanding and increase their mastery of the
       language.}, 
 		   :price => 15.11, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Kindle Store").id) 
 Product.create(:name => %{jQuery in Action, Second Edition}, 
 		   :description => %{A really good web development framework anticipates your needs. jQuery does more-it
@@ -301,7 +301,7 @@ Product.create(:name => %{JQuery For Dummies (For Dummies (Computers))},
       Drupal, and more If you have queries about how you can make your blog or Web site stand apart
       from the crowd, jQuery For Dummies is the book for you!}, 
 		   :price => 15.39, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Olympus SZ-10 Digital Camera - Black 3.0 inch LCD}, 
 		   :description => %{The Olympus SZ-10: Gorgeous super zoom with wireless sharing 18x Wide Optical Zoom
@@ -369,7 +369,7 @@ Product.create(:name => %{Olympus SZ-10 Digital Camera - Black 3.0 inch LCD},
       supplied super-compact AC adaptor also makes it easy to charge the battery while you're
       travelling. The Olympus SZ-10 is available in black or silver.}, 
 		   :price => 148.95, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{Olympus SZ-30MR Digital Camera - Silver 3.0 inch LCD}, 
 		   :description => %{The Olympus SZ-30MR: Worlds first camera to capture HD movies and 16 megapixel
@@ -665,7 +665,7 @@ Product.create(:name => %{Panasonic Lumix FS16 Digital Camera - Black 2.7 inch},
       powerful 8.4x zoom at a resolution of 3-megapixel or less. See all Product
       Description}, 
 		   :price => 84.99, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{Nikon D3100 18-55vr Kit}, 
 		   :description => %{Pure and simple D-SLR for the family Guide mode can help you to improve images eg.
@@ -715,7 +715,7 @@ Product.create(:name => %{Nikon D3100 18-55vr Kit},
       455 g / 1lb) makes the D3100 the ideal camera to pack and carry around for all those
       unmissable moments.}, 
 		   :price => 397.78, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(2).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{Nikon D3000 Digital SLR Camera}, 
 		   :description => %{Intelligent Guide mode helps with camera operation and set-up Introducing the Nikon
@@ -885,7 +885,7 @@ Product.create(:name => %{Nikon D5100 Digital SLR Camera},
       around the world, cover a wide range of focal lengths and provide an extensive lineup of fixed
       focal length, zoom, fisheye, micro and PC-E models.}, 
 		   :price => 586.08, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{Nikon D7000 Body Only}, 
 		   :description => %{The new Nikon D7000: Ready to fulfil your passion The D7000's increased ISO
@@ -1307,7 +1307,7 @@ Product.create(:name => %{Code Complete},
       construction issues early and correctly Build quality into the beginning, middle, and end of
       your project}, 
 		   :price => 21.25, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Introduction to Java Programming, Comprehensive}, 
 		   :description => %{&#x201C;All the topics and concepts are clearly explained with examples and
@@ -1326,7 +1326,7 @@ Product.create(:name => %{Introduction to Java Programming, Comprehensive},
       which, in turn, executes.&#x201D; &#x2014; Barbara Guillott, Louisiana State
       University}, 
 		   :price => 43.50, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{C Pocket Reference}, 
 		   :description => %{C is one of the oldest programming languages and still one of the most widely used.
@@ -1404,7 +1404,7 @@ Product.create(:name => %{C. Answer Book (Prentice Hall Software)},
 		   :description => %{Contains complete explanations of all exercises in Kernighan & Ritchie 2/E.
       Ideal for use with K&R; in any course on C.}, 
 		   :price => 26.95, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Computer Organization and Design}, 
 		   :description => %{Patterson and Hennessy have greatly improved what was already the gold standard of
@@ -1416,7 +1416,7 @@ Product.create(:name => %{Computer Organization and Design},
       details and examples drawn from current hardware .--John Greiner, Rice
       University}, 
 		   :price => 33.32, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Exploring Wonderland}, 
 		   :description => %{For introductory computing and programming courses at four-year and community
@@ -1428,7 +1428,7 @@ Product.create(:name => %{Exploring Wonderland},
       (working with sound samples and pictures). This approach is highly motivating to students,
       especially for those without prior programming experience.}, 
 		   :price => 54.09, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Java for Everyone}, 
 		   :description => %{Programmers, computer scientists, and engineers need a book that delivers the
@@ -1442,7 +1442,7 @@ Product.create(:name => %{Java for Everyone},
       will find useful, such as processing tabular data, harvesting Web information, creating custom
       graphics, and building simple user interfaces.}, 
 		   :price => 35.14, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(3).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Pandora's Box}, 
 		   :description => %{&#x2032;I.T. has triggered complex social, political, economic and ethical
@@ -2381,7 +2381,7 @@ Product.create(:name => %{Lowepro Nova 160 AW All Weather Shoulder Bag for},
       practical choice for the enthusiast or professional. The Nova AW bags let you organize,
       protect and use your gear with ease.}, 
 		   :price => 21.99, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(4).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{SquareTrade 3-Year Warranty Plus Accident Protection}, 
 		   :description => %{Please note: Your Warranty Contract will be delivered via email within 24 hours of
@@ -2456,7 +2456,7 @@ Product.create(:name => %{Nikon D3000},
       readers through the modes of the camera. Users get practical advice from a pro on which
       settings to use when, great shooting tips, and even end-of-chapter assignments.}, 
 		   :price => 7.94, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(4).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Nikon D3000 Digital Field Guide}, 
 		   :description => %{A beautifully illustrated guide to the Nikon D3000 camera What do you need to take
@@ -2495,7 +2495,7 @@ Product.create(:name => %{Gem Easy Access SLR Camera Case for Nikon D5100, D7000
       manufacturers) are referred to only for the purpose of pointing out which of the OEM products
       are compatible with ours. GEM are not in any way associated with any OEM.}, 
 		   :price => 14.97, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(4).id, 
 		   :category_id => Category.find_by_name("Electronics").id) 
 Product.create(:name => %{Nikon D5100 For Dummies (For Dummies (Computers))}, 
 		   :description => %{A picture&#x2013;perfect beginner guide to the new Nikon D5100 Eager to take a
@@ -2513,7 +2513,7 @@ Product.create(:name => %{Nikon D5100 For Dummies (For Dummies (Computers))},
       and shares tips for improving images with editing software Get a grasp on the fun Nikon D5100
       with this fun and friendly guide!}, 
 		   :price => 14.72, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(4).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Nikon D5100 Digital Field Guide}, 
 		   :description => %{The Nikon D5100 is a perfect companion to a photographer searching for a top of the
@@ -3732,7 +3732,7 @@ Product.create(:name => %{Design patterns },
       you find a solution in this book, it will make your job easier and your results more elegant.
       -- Jake Bond}, 
 		   :price => 22.75, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(5).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Slack }, 
 		   :description => %{"Slack" is a work on business management.}, 
@@ -4129,7 +4129,7 @@ Product.create(:name => %{C. Puzzle Book},
       programming challenges.This book is a great next step for any programmer who desires a deeper
       understanding of the C programming language. 0201604612B04062001}, 
 		   :price => 16.14, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(5).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{C Programming}, 
 		   :description => %{Professor King's spiral approach made it accessible to a broad range of readers,
@@ -4139,7 +4139,7 @@ Product.create(:name => %{C Programming},
       The new edition also adds a significant number of exercises and longer programming projects,
       and includes extensive revisions and updates.}, 
 		   :price => 38.95, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(5).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Expert C Programming}, 
 		   :description => %{Defying the stereotypical notion that technical books tend to be boring, Expert C
@@ -4279,10 +4279,10 @@ Product.create(:name => %{Studying Programming (Palgrave Study Guides)},
       that mirrors the conceptual and developmental steps that a student takes from confronting
       their very first blank screen to working on complex problems within a team.}, 
 		   :price => 13.99, 
-		   :manufacturer_id => Manufacturer.first.id, 
+		   :manufacturer_id => Manufacturer.find(5).id, 
 		   :category_id => Category.find_by_name("Books").id) 
 Product.create(:name => %{Maths Credit 2011 SQA Past Papers (Standard Grade)}, 
-		   :description => %{###############################################################################################################################################################################################################################################################}, 
+		   :description => %{Best book in the world wide world}, 
 		   :price => 7.19, 
 		   :manufacturer_id => Manufacturer.first.id, 
 		   :category_id => Category.find_by_name("Books").id) 
