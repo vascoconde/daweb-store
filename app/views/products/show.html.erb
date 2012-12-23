@@ -60,7 +60,9 @@
 		User: <%= review.user.username %><br />
 	<% end %>	
 	<%= will_paginate @reviews %>
-	<% if current_user != nil %>
+	<% if current_user.nil? %>
+		<p>Para a sua review faça login<p>
+	<% else %>
         <%= form_for [@product, Review.new] do |f| %>     
         	<p>
 	        		<%=	f.text_area :content %></br>
