@@ -61,7 +61,7 @@
 	<% end %>	
 	<%= will_paginate @reviews %>
 	<% if current_user.nil? %>
-		<p>Para a sua review faça login<p>
+		<p>Para escrever a sua review do produto faça login<p>
 	<% else %>
         <%= form_for [@product, Review.new] do |f| %>     
         	<p>
