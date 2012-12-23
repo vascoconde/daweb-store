@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
   	@categories = Category.all
-    @products = Product.paginate(:page => params[:page], :per_page => 20)
+    @products = Product.order(params[:order]).paginate(:page => params[:page], :per_page => 20)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

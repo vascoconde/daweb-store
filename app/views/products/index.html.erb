@@ -5,7 +5,11 @@
 <p id="notice"><%= notice %></p>
 <div id="main">
 <h1>Featured Products</h1>
-
+<div class="orderSelectors">
+<%= link_to("Order by price", root_path(order: "price")) %>
+<%= link_to("Order by Last Released", root_path(order: "created_at DESC")) %>
+<%= link_to("Order by Name", root_path(order: "name")) %>
+</div>
 <%= render :partial => "layouts/product", :collection => @products %>
 
 <br />
