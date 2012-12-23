@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   validates :email, :password, :username, :presence => true
   validates :email, :username, :uniqueness => true
 
+  after_create :create_cart
+
+  def create_cart
+  	self.cart = Cart.create
+  end
 end
