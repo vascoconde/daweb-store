@@ -52,8 +52,10 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if (@user.save && @user.admin?)
-       	redirect_to(root_path, notice: "Nao tem autorizacao para criar um perfil de administracao")
+      if (current_user && current_user.admin? && @user.save )
+       	format.html { redirect_to(admins_path, notice: "Criado Utilizador") }
+      elsif @user.admin
+        format.html { redirect_to(root_path, notice: "Nao Autorizado") }
       elsif @user.save
       	session[:user_id] = @user.id
         format.html { redirect_to root_url, notice: 'User was successfully created.' }

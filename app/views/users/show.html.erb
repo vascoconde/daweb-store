@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Perfil</h2>
+<%= link_to 'Gerir a minha Conta', edit_user_path(@user) %>
+
 <p>
   <b>Username:</b>
   <%= @user.username %>
@@ -35,5 +37,3 @@
 
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
