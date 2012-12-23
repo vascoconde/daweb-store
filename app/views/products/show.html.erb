@@ -45,6 +45,9 @@
 
 <h3>Related Products</h3>
 <div class="similarProducts">
+	<% if @related_products.empty? %>
+		<p>Não existem produtos relacionados para este produto<p>
+	<% end %>
 	<% @related_products.each do |product| %>
 		<%= link_to(image_tag(product.photos.first.url, class: "featuredProductImage"), product) %>
 		<%= product.photos.first.description %>
