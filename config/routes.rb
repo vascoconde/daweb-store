@@ -1,5 +1,8 @@
 Store::Application.routes.draw do
 
+  resources :admins
+
+
   resources :orders
 
 

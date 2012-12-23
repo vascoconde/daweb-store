@@ -40,18 +40,22 @@ class CartItemsController < ApplicationController
   # POST /cart_items
   # POST /cart_items.json
   def create
-    @cart = current_cart
-    product = Product.find(params[:product_id])
-    @cart_item = @cart.add_product(product.id)
+  	if current_user.nil?
+  		redirect_to new_session_path, alert: 'Pode fazer aqui login para adicionar produtos ao seu carrinho de compras'
+	else
+    	@cart = current_cart
+   	 	product = Product.find(params[:product_id])
+    	@cart_item = @cart.add_product(product.id)
 
-    respond_to do |format|
-      if @cart_item.save
-        format.html { redirect_to @cart_item.cart, notice: 'Product successfully added to cart.' }
-        format.json { render json: @cart_item, status: :created, location: @cart_item }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
-      end
+    	respond_to do |format|
+    	  if @cart_item.save
+    	    format.html { redirect_to @cart_item.cart, notice: 'Product successfully added to cart.' }
+    	    format.json { render json: @cart_item, status: :created, location: @cart_item }
+    	  else
+    	    format.html { render action: "new" }
+    	    format.json { render json: @cart_item.errors, status: :unprocessable_entity }
+    	  end
+    	end
     end
   end
 

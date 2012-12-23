@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  before_filter :authorize_admin, only: [:edit, :update,:new, :create, :destroy]
+
+
   # GET /categories
   # GET /categories.json
   def index

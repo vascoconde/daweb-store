@@ -24,7 +24,8 @@
          
         <div id="userInfo">
         	<% if current_user %>
-        		<% if current_user.admin %>Administrador:
+        		<% if current_user.admin %>
+        			<%= link_to "Painel Administração", admins_path %><br/>Administrador:
         		<% else %> Utilizador:
         		<% end %>
 

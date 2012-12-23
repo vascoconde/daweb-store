@@ -1,4 +1,7 @@
 class ManufacturersController < ApplicationController
+
+  before_filter :authorize_admin, only: [:edit, :update,:new, :create, :destroy]
+
   # GET /manufacturers
   # GET /manufacturers.json
   def index

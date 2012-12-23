@@ -4,8 +4,8 @@
     	<h3><%= link_to product.name, product %></h3>
     	<b><%= number_to_currency(product.price, :unit => "€") %></b></br>
     	<%= truncate(product.description, :length => 256, :separator => ' ') %></br>
-    	<i>Manufactured by: <%= product.manufacturer.name %></i></br>
-    	<i>Category: <%= product.category.name %></i></br>
+    	<i>Manufactured by: <%= product.manufacturer.name unless product.manufacturer.nil? %></i></br>
+    	<i>Category: <%= product.category.name unless  product.category.nil? %></i></br>
     	<p class="addToCart">
 	        <%= button_to "Add to cart", cart_items_path(:product_id => product) %>
 	    </p>

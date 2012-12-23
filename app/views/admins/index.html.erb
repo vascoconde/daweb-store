@@ -1,0 +1,26 @@
+<div class="main">
+
+<h3>Gerir Produtos</h3>
+<p>Como administrador pode visitar a página de um produto e carregar no botão <i>Actualizar Produto</i> ou <i>Apagar Produto</i> no topo da página do produto.</p>
+<p><%= link_to "Criar um novo produto", new_product_path %></p>
+<h3>Gerir Categorias</h3>
+<% @categories.each do |c| %>
+	<p> <b><%= c.name %> </b> | 
+		<%= link_to 'Editar', edit_category_path(c) %> |
+		<%= link_to 'Apagar', c, method: :delete, data: { confirm: 'Tem a certeza que quer apagar esta categoria?' } %>
+	</p>
+<% end %>
+<p><%= link_to "Criar uma nova categoria", new_category_path %></p>
+
+<h3>Gerir Fabricantes</h3>
+<% @manufacturers.each do |m| %>
+	<p> <b><%= m.name %> </b> | 
+		<%= link_to 'Editar', edit_category_path(m) %> |
+		<%= link_to 'Apagar', m, method: :delete, data: { confirm: 'Tem a certeza que quer apagar esta fabricante?' } %>
+	</p>
+<% end %>
+<p><%= link_to "Criar um novo fabricante", new_manufacturer_path %></p>
+
+<h3>Gerir Users</h3>
+
+</div>

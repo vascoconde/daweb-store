@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authorize, only: [:edit, :update]
-  before_filter :authorize_admin, only: [:new, :create, :destroy]
+  before_filter :authorize_admin, only: [:edit, :update,:new, :create, :destroy]
 
   # GET /products
   # GET /products.json
@@ -20,7 +19,7 @@ class ProductsController < ApplicationController
     @photos = @product.photos
 	@related_products = Product.where("category_id = ? and manufacturer_id = ? and id <> ?", @product.category, @product.manufacturer,@product.id ).limit(6)
     @reviews = @product.reviews.paginate(:page => params[:page], :per_page => 10)
-    @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
+    @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5) unless @product.manufacturer.nil?
     if (current_user != nil)
       @cart = User.find(session[:user_id]).cart
     end
