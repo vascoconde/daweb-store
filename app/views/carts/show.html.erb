@@ -3,13 +3,24 @@
 <p id="notice"><%= notice %></p>
 
 <% @cart.cart_items.each do |cart_item| %>
-  <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; <%= cart_item.quantity %><br/>
+
+  <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; 
+  <%= form_for (cart_item) do |f| %>
+	<%= f.text_field :quantity, :size => 1 %>
+	<%= f.submit %>
+
 <% end %>
+
+		<%= button_to "Remove", cart_item, :method => :delete, :confirm => "Are you sure?" %>
+
+
+<% end %><br />
 
 Total : <%= number_to_currency(@cart.total_cart_items_price, :unit => "€") %>
 
 
 <% if (@cart.cart_items.any?) %>
+
 
     <%=	button_to "Empty cart", @cart, :method => :delete, :confirm => "Are you sure?" %>
 

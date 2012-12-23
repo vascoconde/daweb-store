@@ -62,10 +62,10 @@ class CartItemsController < ApplicationController
 
     respond_to do |format|
       if @cart_item.update_attributes(params[:cart_item])
-        format.html { redirect_to @cart_item, notice: 'Cart item was successfully updated.' }
+        format.html { redirect_to @cart_item.cart, notice: 'Cart item was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to @cart_item.cart, notice: '' }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }
       end
     end
@@ -78,7 +78,7 @@ class CartItemsController < ApplicationController
     @cart_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to cart_items_url }
+      format.html { redirect_to @cart_item.cart }
       format.json { head :no_content }
     end
   end
