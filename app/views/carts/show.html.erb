@@ -4,14 +4,12 @@
 
 <% @cart.cart_items.each do |cart_item| %>
 
-  <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; 
   <%= form_for (cart_item) do |f| %>
-	<%= f.text_field :quantity, :size => 1 %>
-	<%= f.submit %>
-
+    <%= link_to(cart_item.product.name, product_path(cart_item.product)) %> &times; 
+	<%= f.text_field :quantity, :size => 1, :maxlength => 4 %>
+	<%= f.submit 'Update' %>
+	<%= link_to 'Remove', cart_item, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-
-		<%= button_to "Remove", cart_item, :method => :delete, :confirm => "Are you sure?" %>
 
 
 <% end %><br />
