@@ -53,11 +53,17 @@
 
 <h3>Reviews</h3>
 <div class="reviews">
-
+	
+	<% if @reviews.empty? %>
+		<p>Ainda não existem reviews para este produto<p>
+	<% end %>
 	<% @reviews.each do |review| %>
-		Review: <%= review.content %><br />
-		Date: <%= review.created_at %><br />
-		User: <%= review.user.username %><br />
+		<div class="review">
+			<i><%= distance_of_time_in_words_to_now review.created_at %> ago</i><br />
+			User: <i><%= review.user.username %></i><br />
+
+			<p> <%= review.content %></p>
+		</div>
 	<% end %>	
 	<%= will_paginate @reviews %>
 	<% if current_user.nil? %>
