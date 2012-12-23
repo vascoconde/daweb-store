@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
   def show
   	@categories =Category.all
     @category = Category.find(params[:id])
-	  @products = @category.products.paginate(:page => params[:page], :per_page => 20)
+	  @products = @category.products.order(params[:order]).paginate(:page => params[:page], :per_page => 20)
 	
     respond_to do |format|
       format.html # show.html.erb

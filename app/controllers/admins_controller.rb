@@ -4,7 +4,6 @@ class AdminsController < ApplicationController
   def index
   	@categories = Category.all
   	@manufacturers = Manufacturer.all
-
   end
 
 end

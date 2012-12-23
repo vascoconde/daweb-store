@@ -5,6 +5,11 @@
 <div id="main">
 <h1>Search Results</h1>
 	<p>Showing results for <b><%= @search_query %></b></p>
+<div class="orderSelectors">
+<%= link_to("Order by price", search_path(search:@search_query, order: "price")) %>
+<%= link_to("Order by Last Released", search_path(search:@search_query, order: "created_at DESC")) %>
+<%= link_to("Order by Name", search_path(search:@search_query, order: "name")) %>
+</div>
 
 <%= render :partial => "layouts/product", :collection => @products %>
 

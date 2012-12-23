@@ -1,5 +1,4 @@
 
-
 <div id="sidebar">
 	<%= render 'layouts/categories_sidebar' %>
 </div>
@@ -7,6 +6,12 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @category.name %></h2>
+
+<div class="orderSelectors">
+<%= link_to("Order by price", category_path( @category, order: "price")) %>
+<%= link_to("Order by Last Released", category_path( @category,order: "created_at DESC")) %>
+<%= link_to("Order by Name", category_path( @category, order: "name")) %>
+</div>
 
 <%= render :partial => "layouts/product", :collection => @products %>
 
