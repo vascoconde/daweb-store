@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_filter :authorize, only: [:edit, :update, :new, :create, :destroy]
+  before_filter :authorize, only: [:edit, :update]
+  before_filter :authorize_admin, only: [:new, :create, :destroy]
 
   # GET /products
   # GET /products.json

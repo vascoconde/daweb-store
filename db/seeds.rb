@@ -7,7 +7,7 @@ Cart.destroy_all
 User.destroy_all
 
 User.create(username: 'admin', email:'admin@daweb-store@herokuapp.com', password: 'admin', admin: true)
-User.create(username: 'user', email:'user@daweb-store@herokuapp.com', password: 'user', admin: true)
+User.create(username: 'user', email:'user@daweb-store@herokuapp.com', password: 'user')
 
 Manufacturer.create([{ name: 'Apple' }, { name: 'Microsoft' },{ name: "O'Reilly" },{ name: 'Google' }, {name: 'IKEA' }])# Categorias 
 Category.create(:name => %{Books})

@@ -19,4 +19,8 @@ private
   def authorize
   	redirect_to new_session_path, alert: "Nao autorizado" if current_user.nil?
   end
+  
+  def authorize_admin
+  	redirect_to new_session_path, alert: "Area limitada a administradores" if current_user.nil? || !current_user.admin
+  end
 end

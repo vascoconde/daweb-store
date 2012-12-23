@@ -26,7 +26,11 @@
          
         <div id="userInfo">
         	<% if current_user %>
-        		Utilizador: <%= link_to current_user.username, user_path(current_user) %> <br/>
+        		<% if current_user.admin %>Administrador:
+        		<% else %> Utilizador:
+        		<% end %>
+
+        		<%= link_to current_user.username, user_path(current_user) %> <br/>
         		<%= link_to "O meu carrinho de Compras", current_user.cart %>
         		<%= link_to "Log Out", session_path("current"), method: "delete" %>
         	<% else %>
