@@ -5,6 +5,7 @@
 <p id="notice"><%= notice %></p>
 <div id="main">
 <h1>Featured Products</h1>
+<<<<<<< HEAD
 
 <table id="tableProducts">
   <tr>
@@ -27,6 +28,14 @@
   </tr>
 <% end %>
 </table>
+=======
+<div class="orderSelectors">
+<%= link_to("Order by price", root_path(order: "price")) %>
+<%= link_to("Order by Last Released", root_path(order: "created_at DESC")) %>
+<%= link_to("Order by Name", root_path(order: "name")) %>
+</div>
+<%= render :partial => "layouts/product", :collection => @products %>
+>>>>>>> befd93fd6c1a7a611355e1ad59e0b389f2b9c079
 
 <br />
 <div class="pagination"><%= will_paginate @products %></div>

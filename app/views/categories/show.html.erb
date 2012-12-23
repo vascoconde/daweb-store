@@ -7,6 +7,7 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @category.name %></h2>
+<<<<<<< HEAD
 <% @products.each do |product| %>
 	<div class="productContainer">
 		<h3><%= link_to(product.name,product) %></h3>
@@ -17,6 +18,10 @@
 		<div class="clear"></div>
 	</div>
 <% end %>
+=======
+<%= render :partial => "layouts/product", :collection => @products %>
+
+>>>>>>> befd93fd6c1a7a611355e1ad59e0b389f2b9c079
 
 <%= will_paginate @products %>
 <%= link_to 'Edit', edit_category_path(@category) %> |

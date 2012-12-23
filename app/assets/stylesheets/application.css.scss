@@ -285,7 +285,11 @@ td.productListDescription {
 
 #main {
 	position: relative;
+<<<<<<< HEAD
 	width:740px;
+=======
+	width:730px;
+>>>>>>> befd93fd6c1a7a611355e1ad59e0b389f2b9c079
 	float: left;
 	margin-top: 10px;
 	margin-left: 10px;
@@ -315,5 +319,26 @@ td.productListDescription {
 	right: 10px;
 	bottom: 10px;
 	text-align: right;
+}
+
+.product {
+	position: relative;
+}
+
+.product .productImage {
+	position: relative;
+	float: left;
+	width: 270px;
+	height: 260px;
+}
+
+.product .productImage img{
+	height: 240px;
+}
+
+.product .productInfo {
+	position: relative;
+	float: left;
+	width: 390px;
 }
 
