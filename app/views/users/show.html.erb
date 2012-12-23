@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Perfil</h2>
 <p>
   <b>Username:</b>
   <%= @user.username %>
@@ -15,18 +16,20 @@
   <%= @user.password %>
 </p>
 
-
+<br />
 <h2>Encomendas feitas</h2>
 <p>
-	<hr>
 	<% order_total_price = 0 %>
 	<% @user.orders.each do |order| %>
-		Order date: <%= order.created_at %><br />
+		<b>Order date:</b> <%= order.created_at %><br />
+		<b>Order paid with:</b> <%= order.pay_type %><br />
+		<br />
+		<b>Products:</b><br />
 		<% order.cart_items.each do |item| %>
 			<% order_total_price += item.total_price %>
 			<%= link_to(item.product.name, product_path(item.product)) %> &times; <%= item.quantity %> = <%= number_to_currency(item.total_price, :unit => "€") %><br />
 		<% end %>
-		<br />Order total: <%= number_to_currency(order_total_price, :unit => "€") %><hr>
+		<br /><b>Order total</b>: <%= number_to_currency(order_total_price, :unit => "€") %><hr>
 	<% end %>
 </p>
 

@@ -2,6 +2,12 @@
 
 /*  about.html  */
 
+
+a:hover {
+	color: #5F9EA0;
+	background-color: #D4EFFA;
+}
+
 #containeraboutus {
 	clear: both;
 	border: 1px solid black;
@@ -279,13 +285,18 @@ td.productListDescription {
 
 #main {
 	position: relative;
-	width:700px;
+	width:740px;
 	float: left;
-	margin: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
 	padding: 10px;
 	background-color: #f0f7ff;
 }
 
+.pagination{
+	text-align: center;
+}
 
 #container {
 	clear: both;

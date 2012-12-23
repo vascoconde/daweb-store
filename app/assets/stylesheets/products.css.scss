@@ -4,6 +4,11 @@
 
 /*  product.html  */
 
+
+.button_to{
+	text-align: center;
+}
+
 #sidebar {
 	height: 100%;
 	position: relative;
@@ -11,29 +16,21 @@
 	width: 230px;
 }
 
+#tableProducts{
+	text-align:center;
+}
 
+.product{
+	border-left: 1px dashed black;
+	border-bottom: 1px dashed black;
+}
 
-#breadcrumb {
-	text-align: left;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	width: 1000px;
-	margin: auto;
+.productFirstColumn{
+	border-bottom: 1px dashed black;
 }
 
 #productName {
 	text-align: center;
-}
-
-#productPhoto {
-	margin: 15px 1px 5px 10px;
-}
-
-
-#descriptionProduct {
-	margin: 0 0 20px 0;
 }
 
 .manufacturerProductimage {

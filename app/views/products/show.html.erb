@@ -4,7 +4,7 @@
 	
 	<%= image_tag( @photos.first.url, class: "productImage")%>
 	<% if (current_user != nil) %>
-	    <p id="addToCart">
+	    <p>
 	        <%= button_to "Add to cart", cart_items_path(:product_id => @product) %>
 	    </p>
     <% end %>
@@ -15,7 +15,7 @@
 	</div>
 	
 	<div id="manufacturerProducts"> 
-		<h4>Other Products from this manufacturer</h4>
+		<h3>Other Products from this Manufacturer</h3>
 		<% @manufacturer_products.each do |product| %>
 			<%= link_to(image_tag(product.photos.first.url, class: "manufacturerProductImage"), product) %>
 		<% end %>
@@ -26,20 +26,14 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+	<h3>Description</h3> 
+	<%= @product.description %>
 
-<p>
-  <b>Price:</b>
-  <%= number_to_currency(@product.price, :unit => "€") %>
-</p>
+	<h3>Price</h3>
+	<%= number_to_currency(@product.price, :unit => "€") %>
 
-<p>
-  <b>Category</b>
-  <%= @product.category.name %>
-</p>
+	<h3>Category</h3>
+	<%= @product.category.name %>
 
 <h3>Photos</h3>
 <% @photos.each do |photo| %>
@@ -51,14 +45,21 @@
 
 <h3>Related Products</h3>
 <div class="similarProducts">
-	<% @related_products.each do |product| %>
-		<%= link_to(image_tag(product.photos.first.url, class: "featuredProductImage"), product) %>
-		<%= product.photos.first.description %>
-	<% end %>	
+	<% i = 0 %>
+	<% @product.category.products.each do |product|%>
+		<% if @product != product && @product.manufacturer == product.manufacturer%>
+			<% if i != 6 %>
+				<%= link_to(image_tag(product.photos.first.url, class: "featuredProductImage"), product) %>
+				<%= product.photos.first.description %>
+				<% i=i+1 %>	
+			<% end %>
+		<% end %>
+	<% end %>
 </div>
 
 <h3>Reviews</h3>
 <div class="reviews">
+
 	<% @reviews.each do |review| %>
 		Review: <%= review.content %><br />
 		Date: <%= review.created_at %><br />
@@ -68,7 +69,7 @@
 	<% if current_user != nil %>
         <%= form_for [@product, Review.new] do |f| %>     
         	<p>
-	        		<%=	f.text_area :content %>
+	        		<%=	f.text_area :content %></br>
 	        		<%= f.submit "Post" %>   	
         	</p>
        <% end %> 

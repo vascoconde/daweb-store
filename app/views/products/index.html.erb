@@ -6,31 +6,30 @@
 <div id="main">
 <h1>Featured Products</h1>
 
-<table>
+<table id="tableProducts">
   <tr>
-  	<th>Photo</th>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Manufacturer</th>
-    <th>Category</th>
-    <th></th>
+  	<th class="productFirstColumn">Photo</th>
+    <th class="product">Name</th>
+    <th class="product">Description</th>
+    <th class="product">Price</th>
+    <th class="product">Manufacturer</th>
+    <th class="product">Category</th>
   </tr>
 
 <% @products.each do |product| %>
   <tr>
-  	<td><%= link_to(image_tag(product.photos.first.url), product) %></td>
-    <td><%= product.name %></td>
-    <td><%= truncate(product.description, :length => 100, :separator => ' ') %></td>
-    <td><%= number_to_currency(product.price, :unit => "€") %></td>
-    <td><%= product.manufacturer.name %></td>
-    <td><%= product.category.name %></td>
+  	<td class="productFirstColumn"><%= link_to(image_tag(product.photos.first.url), product) %></td>
+    <td class="product"><%= product.name %></td>
+    <td class="product"><%= truncate(product.description, :length => 100, :separator => ' ') %></td>
+    <td class="product"><%= number_to_currency(product.price, :unit => "€") %></td>
+    <td class="product"><%= product.manufacturer.name %></td>
+    <td class="product"><%= product.category.name %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-<%= will_paginate @products %>
+<div class="pagination"><%= will_paginate @products %></div>
 <%= link_to 'New Product', new_product_path %>
 </div>
 

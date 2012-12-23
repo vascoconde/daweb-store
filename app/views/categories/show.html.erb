@@ -1,3 +1,5 @@
+
+
 <div id="sidebar">
 	<%= render 'layouts/categories_sidebar' %>
 </div>
@@ -6,12 +8,13 @@
 
 <h2><%= @category.name %></h2>
 <% @products.each do |product| %>
-	<div>
-		<h3><%= product.name %></h3>
+	<div class="productContainer">
+		<h3><%= link_to(product.name,product) %></h3>
 		<div class="image">
-			<%= image_tag product.photos.first.url %>
+			<%= link_to((image_tag product.photos.first.url),product) %>
 		</div>
-		<p><%= product.description %></p>
+		<div class="productDescription"><p><%= product.description %></p></div>
+		<div class="clear"></div>
 	</div>
 <% end %>
 
