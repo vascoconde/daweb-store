@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_filter :authorize_admin, only: [:index]
+  before_filter :authorize, only: [:show, :edit, :update, :destroy]
+
   # GET /users
   # GET /users.json
   def index
@@ -12,12 +15,15 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
+  def show  
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+    if !(@user == current_user || current_user.admin?)
+	  redirect_to(root_path, notice: "Acesso Restrito")
+	else
+   	  respond_to do |format|
+     	 format.html # show.html.erb
+     	 format.json { render json: @user }
+      end
     end
   end
 
@@ -35,6 +41,9 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    if !(@user == current_user || current_user.admin?)
+	  redirect_to(root_path, notice: "Acesso Restrito")
+	end
   end
 
   # POST /users
@@ -43,7 +52,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
+      if (@user.save && @user.admin?)
+       	redirect_to(root_path, notice: "Nao tem autorizacao para criar um perfil de administracao")
+      elsif @user.save
       	session[:user_id] = @user.id
         format.html { redirect_to root_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
@@ -74,11 +85,15 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
+    if !(@user == current_user || current_user.admin?)
+	  redirect_to(root_path, notice: "Acesso Restrito")
+	else
+    	@user.destroy
+		
+    	respond_to do |format|
+    	  format.html { redirect_to users_url }
+    	  format.json { head :no_content }
+    	end
     end
   end
 end
