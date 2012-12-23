@@ -7,21 +7,8 @@
 <p id="notice"><%= notice %></p>
 
 <h2><%= @category.name %></h2>
-<<<<<<< HEAD
-<% @products.each do |product| %>
-	<div class="productContainer">
-		<h3><%= link_to(product.name,product) %></h3>
-		<div class="image">
-			<%= link_to((image_tag product.photos.first.url),product) %>
-		</div>
-		<div class="productDescription"><p><%= product.description %></p></div>
-		<div class="clear"></div>
-	</div>
-<% end %>
-=======
-<%= render :partial => "layouts/product", :collection => @products %>
 
->>>>>>> befd93fd6c1a7a611355e1ad59e0b389f2b9c079
+<%= render :partial => "layouts/product", :collection => @products %>
 
 <%= will_paginate @products %>
 <%= link_to 'Edit', edit_category_path(@category) %> |

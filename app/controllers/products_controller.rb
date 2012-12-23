@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = @product.photos
-    @related_products = @product.related_products
+	@related_products = Product.where("category_id = ? and manufacturer_id = ? and id <> ?", @product.category, @product.manufacturer,@product.id ).limit(6)
     @reviews = @product.reviews.paginate(:page => params[:page], :per_page => 10)
     @manufacturer_products = @product.manufacturer.products.where("id <> ?",@product.id).limit(5)
     if (current_user != nil)
